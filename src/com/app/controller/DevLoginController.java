@@ -55,7 +55,7 @@ public class DevLoginController {
         if (EmptyUtils.isNotEmpty(devCode) || EmptyUtils.isNotEmpty(devPassword)){
             //2.进行查询
             DevUser devUser = devService.doLogin(devCode,devPassword);
-           //3.判空
+            //3.判空
             if (EmptyUtils.isNotEmpty(devUser)){
                 //4.存储session
                 request.getSession().setAttribute("devUserSession",devUser);
@@ -70,4 +70,5 @@ public class DevLoginController {
         //登录失败进入devlogin.jsp页面
         return "devlogin";
     }
+
 }
